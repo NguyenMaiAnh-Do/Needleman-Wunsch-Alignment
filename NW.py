@@ -5,7 +5,7 @@ gap = -2
 match = 1
 mismatch = 0
 
-#STEP1: IMPLEMENT THE NEEDLEMAN-WUNSCH ALGORITHM
+
 def get_align(seq1,seq2, gap = -2, match = 1, mismatch = 0):
     length1 = len(seq1)
     length2 = len(seq2)
