@@ -1,8 +1,8 @@
+#CREATING THE GUI BY TNINTER LIBRARY
 
 from tkinter import *
 import NW 
 import re
-
 
 class NotDNAseq(Exception):
     pass
@@ -10,6 +10,7 @@ class NotNumber(Exception):
     pass
 class NotNegativeNum(Exception):
     pass
+
 def Take_input():
     INPUT1 = inputtxt1.get("1.0", "end-1c").upper()
     INPUT2 = inputtxt2.get("1.0", "end-1c").upper()
@@ -18,7 +19,7 @@ def Take_input():
     INPUT5 = inputtxt5.get("1.0", "end-1c")
 
     validated_inputs = True
-
+    #sequence 1
     try:
         match = re.search(r"[^ATCG]", INPUT1)
         if match:
@@ -26,7 +27,7 @@ def Take_input():
     except NotDNAseq:
         Output.insert(END,"Sequence 1 is not a DNA sequence, please clear and insert again \n")
         validated_inputs = False
-
+    #sequence 2
     try:
         match = re.search(r"[^ATCG]", INPUT2)
         if match:
@@ -59,7 +60,7 @@ def Take_input():
     
     try:
         value5 = int(INPUT5)
-        if value5 >0:
+        if value5 > 0:
             raise NotNegativeNum
     except ValueError:
         Output.insert(END, "Mismatch score is not a number, please clear and insert again \n" )
